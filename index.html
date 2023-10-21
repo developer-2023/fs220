@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object methods - exercise</title>
+</head>
+<body>
+    
+    <script>
+        const school = {
+            name: "Sunny Valley School",
+            town: "Hope",
+            students: [],
+            addStudent: function(name, surname) {
+                let index = this.students.length;
+                this.students[index] = {
+                    name: name,
+                    surname: surname
+                }
+            },
+            showStudents: function() {
+                numberOfStudents = this.students.length;
+                if (numberOfStudents == 0) {
+                    console.log("There are no students on the list");
+                } else {
+                    for (let i = 0; i < numberOfStudents; i++) {
+                        console.log(i+1, this.students[i].name, this.students[i].surname);
+                    }
+                }
+            },
+            getNumStudents: function() {
+                console.log("Number of students:", this.students.length);
+            },
+            resetStudents: function() {
+                this.students = [];
+            }
+        }
+
+        school.showStudents();
+        school.addStudent("John", "Doe");
+        school.addStudent("Betty", "Smith");
+        school.addStudent("Steven", "Coulthard");
+        school.showStudents();
+        school.getNumStudents();
+        school.resetStudents();
+        school.getNumStudents();
+
+    </script>
+</body>
+</html>
